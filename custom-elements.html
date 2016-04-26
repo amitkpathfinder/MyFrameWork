@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Elements</title>
+	<style>
+		x-foo{color:white;background:red;width:100px;height:100px;display:block;content:"Amit Kumar";}
+		button{width:100px;height:100px;}
+		mega-button{background:green;}
+	</style>
+</head>
+<body>
+<script>
+var XFoo = document.registerElement('x-foo');
+var onetag = new XFoo();
+onetag.innerHTML = "asdasdasdasd";
+document.body.appendChild(onetag);
+var MegaButton = document.registerElement('mega-button', { prototype:Object.create(HTMLButtonElement.prototype), extends:'button'}); // Type Extension Custom Elements
+var megab = new MegaButton();
+megab.innerHTML='Click Me';
+document.body.appendChild(megab);
+
+
+var XFooProto = Object.create(HTMLElement.prototype);
+var XFooExtended = document.registerElement('x-foo-extended', {prototype: XFooProto});
+document.body.appendChild(new XFooExtended());
+
+
+
+
+var XFooProtooo = Object.create(HTMLElement.prototype);
+
+// 1. Give x-foo a foo() method.
+XFooProtooo.foooo = function() {
+  alert('foooo() called');
+};
+
+// 2. Define a property read-only "bar".
+Object.defineProperty(XFooProtooo, "bar", {value: 5});
+
+// 3. Register x-foo's definition.
+var XFooo = document.registerElement('x-fooo', {prototype: XFooProtooo});
+
+// 4. Instantiate an x-foo.
+var xfooo = document.createElement('x-fooo');
+
+// 5. Add it to the page.
+document.body.appendChild(xfooo);
+
+
+
+</script>
+<button is="mega-button"></button>
+</body>
+</html>
