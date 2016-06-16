@@ -1,0 +1,39 @@
+<html>
+<style>
+	.videomodalLayer{position:fixed;top:0;bottom:0;left:0;right:0;width:400px;height:400px;background:#fff;border:10px rgba(0,0,0,.5) solid;margin:auto;display:none;}
+	.close-video{position:absolute;right:0;top:0;z-index:1;width:20px;height:20px;background:red;color:#fff;text-align:center;}
+</style>
+  <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  	<div class="videomodalLayer">
+	    <video id='videoPlayer' width="100%" height="100%" controls="controls">
+	       <source id='mp4Source' src="movie.mp4" type="video/mp4" />
+	    </video>
+	    <div class='close-video'>
+	    	x
+	    </div>
+	</div>
+
+<button type="button" class="myVideoListItem" src-data='http://solutions.brightcove.com/bcls/assets/videos/Bird_Titmouse.mp4'>Click1</button>
+<button type="button" class="myVideoListItem" src-data='http://solutions.brightcove.com/bcls/assets/videos/Bird_Titmouse.mp4'>Click2</button>
+
+    <script>
+      var player = document.getElementById('videoPlayer');
+      var mp4Vid = document.getElementById('mp4Source');
+      player.pause();
+      $(document).on('click', '.myVideoListItem', function(e) {
+      		e.preventDefault();
+      		$('.videomodalLayer').show();
+      		mp4Vid.src = $(this).attr('src-data');
+      		player.load();
+      		player.play();
+      });
+      $(document).on('click', '.close-video', function(e) {
+      	event.preventDefault();
+      	$(this).parent('.videomodalLayer').hide();
+      	player.pause();
+      });
+    </script>
+  </body>
+</html>

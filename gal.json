@@ -1,0 +1,24 @@
+{
+	"property": [
+					{ "type":"video", "link":"property-abcd.com", "url": "hello"},
+					{ "type":"video", "link":"property-abcd.com", "url": "hello"},
+					{ "type":"floor", "link":"property-abcd.com", "url": "hello"},
+					{ "type":"photo", "link":"property-abcd.com", "url": "hello"},
+					{ "type":"video", "link":"property-abcd.com", "url": "hello"},
+					{ "type":"photo", "link":"property-abcd.com", "url": "hello"},
+					{ "type":"video", "link":"property-abcd.com", "url": "hello"},
+					{ "type":"floor", "link":"property-abcd.com", "url": "hello"},
+					{ "type":"video", "link":"property-abcd.com", "url": "hello"}
+				],
+	"society": [
+					{ "type":"video", "link":"society-abcd.com", "url": "hello"},
+					{ "type":"video", "link":"society-abcd.com", "url": "hello"},
+					{ "type":"floor", "link":"society-abcd.com", "url": "hello"},
+					{ "type":"photo", "link":"society-abcd.com", "url": "hello"},
+					{ "type":"video", "link":"society-abcd.com", "url": "hello"},
+					{ "type":"photo", "link":"society-abcd.com", "url": "hello"},
+					{ "type":"video", "link":"society-abcd.com", "url": "hello"},
+					{ "type":"floor", "link":"society-abcd.com", "url": "hello"},
+					{ "type":"video", "link":"society-abcd.com", "url": "hello"}
+				]
+}

@@ -9,46 +9,28 @@
 	</style>
 </head>
 <body>
+
+<template id="sdtemplate">
+  <style>
+    p { color: orange; }
+  </style>
+  <p>I'm in Shadow DOM. My markup was stamped from a &lt;template&gt;.</p>
+</template>
+
 <script>
-var XFoo = document.registerElement('x-foo');
-var onetag = new XFoo();
-onetag.innerHTML = "asdasdasdasd";
-document.body.appendChild(onetag);
-var MegaButton = document.registerElement('mega-button', { prototype:Object.create(HTMLButtonElement.prototype), extends:'button'}); // Type Extension Custom Elements
-var megab = new MegaButton();
-megab.innerHTML='Click Me';
-document.body.appendChild(megab);
-
-
-var XFooProto = Object.create(HTMLElement.prototype);
-var XFooExtended = document.registerElement('x-foo-extended', {prototype: XFooProto});
-document.body.appendChild(new XFooExtended());
-
-
-
-
-var XFooProtooo = Object.create(HTMLElement.prototype);
-
-// 1. Give x-foo a foo() method.
-XFooProtooo.foooo = function() {
-  alert('foooo() called');
-};
-
-// 2. Define a property read-only "bar".
-Object.defineProperty(XFooProtooo, "bar", {value: 5});
-
-// 3. Register x-foo's definition.
-var XFooo = document.registerElement('x-fooo', {prototype: XFooProtooo});
-
-// 4. Instantiate an x-foo.
-var xfooo = document.createElement('x-fooo');
-
-// 5. Add it to the page.
-document.body.appendChild(xfooo);
-
-
-
+var proto = Object.create(HTMLElement.prototype, {
+  createdCallback: {
+    value: function() {
+      var t = document.querySelector('#sdtemplate');
+      var clone = document.importNode(t.content, true);
+      this.createShadowRoot().appendChild(clone);
+    }
+  }
+});
+document.registerElement('x-foo-from-template', {prototype: proto});
 </script>
-<button is="mega-button"></button>
+
+<x-foo-from-template></x-foo-from-template>
+
 </body>
 </html>

@@ -2,7 +2,7 @@ function doItOnHover(getThis)
 {
 	var getChild = getThis.find('[data-toolTipBox]');
 	if(getChild.length>0)
-	{	
+	{
 		setPosition(getThis, getChild);
 		getChild.show();
 		//return false;
@@ -20,7 +20,7 @@ function doItOnHoverExit(getThis)
 }
 
 function createElem(tipParent,tipClass)
-{		
+{
 		var getVal = tipParent.attr('data-toolTip');
 		var elem = $('<div/>');
 		elem.attr('data-toolTipBox','').addClass(tipClass).text(getVal);
@@ -36,7 +36,6 @@ function createElem(tipParent,tipClass)
 }
 function setPosition(tipParent, elem)
 {
-
 		var checkOffset = tipParent.offset().left + tipParent.outerWidth();
 		var elemWidth = elem.outerWidth();
 		console.log(checkOffset+elemWidth);

@@ -6,25 +6,166 @@
 	
 	<style>
 	.tipCon{width:20px;height:20px;background:#8AC1F7;padding:20px;border-radius:5px;margin:50px;}
-	.tipColor{position:absolute;min-width:50px;/* max-width:200px; */border:1px #ccc solid;padding:5px;}
+	.tipColor{position:absolute;min-width:50px;background:#fff;/* max-width:200px; */border:1px #ccc solid;padding:5px;}
+
+  .hide{display:none;}
 	</style>
 	
 </head>
 <body>
-  
+
+<div>
+
   <div class="tipCon" data-toolTip="Hi Here is the message.">
-  	a
+  	ab
   </div>
 
   <div class="tipCon" data-toolTip="Hello, Please check your recent message.">
   	b
   </div>
 
+<style>
+  .icn_viewFloorPlan, .icn_constructionPhoto, .icn_viewPriceTrend{width:14px;height:14px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAOBAMAAACWQvIuAAAAGFBMVEUAAAA0mNs0mNs0mNs0mNs0mNs0mNs0mNsyclOGAAAAB3RSTlMA8BDQYKCADSopswAAAGJJREFUGNNjKC9nLwcCBgYgC8yAs8rhcnCAKYcQQZEDymLKMaDJiYjjlnNwR5ODcmH6iuFyDCAWiluMEHLo7ixWALMYMOVKE40YUOUQLg9gUkCXK4DKlYJchPApihwYECkHADdUcH6Q2ClkAAAAAElFTkSuQmCC) 0% 0% no-repeat;display:inline-block;}
+.icn_viewFloorPlan{ background-position:0% 0%;}
+.icn_constructionPhoto { background-position:-20px 0%;}
+.icn_viewPriceTrend { background-position:-40px 0%;}
+</style>
+
+<i class="icn_viewFloorPlan" data-toolTip="Hi Here is the message Here is the message Here is the message Here is the message Here is the message message Here is the message Here is the message Here is the message message Here is the message Here is the message Here is the message message Here is the message Here is the message Here is the message."></i>
+
+
   <div class="tipCon" style="float:right" data-toolTip="Hi Here is the message Here is the message Here is the message Here is the message Here is the message message Here is the message Here is the message Here is the message message Here is the message Here is the message Here is the message message Here is the message Here is the message Here is the message.">
   	d
   </div>
 
+
+
+
+<div class="parentClass-action">
+  <input type="submit" class="call-to-action" data-actionFeedback="call-to-action" value="Submit Form" />
+</div>
+<div style="display: inline-block;" data-toolTip="Hello, Please check your recent message.">
+    sdasda sdada sda dd adsd
+  </div>
+<style>
+.parentClass-action{width:200px;height:50px;background:#0065de;position:relative;}
+.ink {display: block; position: absolute;background: hsl(180, 40%, 80%);border-radius: 100%;transform: scale(0);}
+.ink.animate {animation: ripple 0.45s linear;}
+@keyframes ripple {
+  100% {opacity: 0; transform: scale(2.5);}
+}
+input[type="submit"].call-to-action{width:100%;height:100%;text-align:center;background:#8AC1F7;color:#fff;border:0;outline:none;}
+</style>
+
+
+
+
+
+<style>
+  .tabsContainer .tab-items{background:#ccc;}
+  .tabsContainer .tab-items > *[tab-items]{display:inline-block;padding:10px;border:1px red solid;}
+  .tabsContainer .tab-items > .active{color:green;}
+  .tabsContainer .tab-item-Content {background:#ececec;border:1px #ccc solid;padding:10px;}
+  .tabsContainer .tab-item-Content > *[tab-content]{display:none;}
+  .tabsContainer .tab-item-Content > *[tab-content].active{display:block;}
+</style>
+
+
+<!--TABS-->
+<div data-in-role='tabs' class="tabsContainer">
+  <div class="tab-items">
+    <div tab-items="ab">Tabs1</div>
+    <div tab-items="cd" class="active">Tabs2</div>
+    <div tab-items="ef">Tabs3</div>
+  </div>
+  <div class="tab-item-Content">
+    <div tab-content='ab'>TabasdadContentda1</div>
+    <div tab-content='cd' class="active">TabContenr2</div>
+    <div tab-content='ef'>TabsContenrt3</div>
+  </div>
+</div>
+<!--TABS-->
+
+
+
+<style>
+.gallery-widget{border:1px #333 solid;width:500px;height:400px;box-sizing:border-box;}
+.gallery-widget *{box-sizing:border-box;}
+.gallery-widget .gallery-photo{border:1px #666 solid;border-width:1px 0;height:300px;width:100%;overflow:hidden;}
+.gallery-widget .gallery-photo img{object-fit:cover;width:100%;height:100%;}
+.gallery-widget .gallery-thumbs-stream{border:1px #999 solid;border-width:1px 0;height:100px;width:100%;overflow:hidden;position:relative;}
+.gallery-widget .gallery-thumbs-stream .gallery-img-list{border:1px #999 solid;white-space:nowrap;transition:margin .2s linear;}
+.gallery-widget .gallery-thumbs-stream .gallery-img-list .gallery-img{width:100px;height:100px;border:1px #999 solid;border-width:0 1px 0 0;display:inline-block;overflow:hidden;}
+.gallery-widget .gallery-thumbs-stream .gallery-img-list .gallery-img img{object-fit:cover;width:100%;height:100%;}
+.fix-inline-block-space{word-spacing:-4px;}
+.fix-inline-block-space>*{word-spacing:normal;}
+.prev, .next{position:absolute;left:0;background:rgba(0,0,0,.5);width:20px;height:100%;display:flex;top:0;}
+.next{right:0;left:auto;}
+.current{border:1px red solid!important;}
+</style>
+
+<div ui-widget-role='gallery' class="gallery-widget">
+  <div data-gallery='large-pic' class="gallery-photo">
+    <img src="img/USP.png" />
+  </div>
+  <div data-gallery='gallery-film-mask' class="gallery-thumbs-stream">
+    <div class="prev">prev</div>
+    <div data-gallery='gallery-film' class="gallery-img-list fix-inline-block-space">
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/hqdefault.jpg" /></div>
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/Images_Learning_1.jpg" /></div>
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/3.jpg" /></div>
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/4.jpg" /></div>
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/5.jpg" /></div>
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/6.jpg" /></div>
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/hqdefault.jpg" /></div>
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/Images_Learning_1.jpg" /></div>
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/3.jpg" /></div>
+      <div data-gallery='thumbs' class="gallery-img"><img src="img/4.jpg" /></div>
+    </div>
+    <div class="next">next</div>
+  </div>
+</div>
+
+</div>
+
+<style>
+.makeNewGallery, .makeNewGallery *{box-sizing:border-box;}
+.makeNewGallery{border:2px green solid;width:800px;height:300px;overflow:hidden;position:relative;}
+.makeFilm{width:100%;white-space:nowrap;transition:all .2s ease-in-out;}
+.makeFilm *[data-photo]{display:inline-block;width:800px;height:300px;text-align:center;}
+.makeFilm *[data-photo]:nth-child(odd){background:#ccc;}
+.makeFilm *[data-photo]:nth-child(even){background:#fff;}
+.makeNewGallery *[call-next], .makeNewGallery *[call-previous]{display:inline-block;width:40px;height:20px;background:#fff;color:#000;position:absolute;top:0;z-index:1;}
+.makeNewGallery *[call-next]{right:0;}
+.makeNewGallery .dot-wraper{position:absolute;bottom:20px;left:0;right:0;margin:auto;display:inline-block;text-align:center;background:green;padding:5px;}
+.makeNewGallery .dots{display:inline-block;width:4px;height:4px;background:#fff;margin:0 5px;}
+</style>
+<div class="makeNewGallery">
+  <div call-previous>Previous</div>
+  <div make-film class="makeFilm"></div>
+  <div call-next>Next</div>
+</div>
+
+
+
+
+<style>
+  .stickThis{display:block;width:100%;height:40px;background:#ececec;color:#000;}
+  .stickHere{display:block;width:200px;height:200px;background:#0065de;}
+  
+</style>
+
+<div class="stickThis">Sticky This Here...</div>
+<div class="stickHere">Sticky With This...</div>
+
+
 </body>
 <script src="jquery.min.js"></script>
 <script src="main.js"></script>
+<script src="material-action-feedback.js"></script>
+<!-- <script src="fetch-data.js"></script> -->
+<script src="tabs.js"></script>
+<script src="non-circular-gallery.js"></script>
+<script src="category-slider.js"></script>
+<script src="sticky-handle.js"></script>
 </html>
